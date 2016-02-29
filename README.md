@@ -1,4 +1,4 @@
-# spark-cassandra-java
+# spark-wordcount-java
 
 Reference: http://www.datastax.com/dev/blog/accessing-cassandra-from-spark-in-java
 
@@ -9,15 +9,15 @@ Reference: http://www.datastax.com/dev/blog/accessing-cassandra-from-spark-in-ja
 ### Upload files to Spark server
 ##### create spark-cassandra-java/ directory in spark server
 mkdir spark-wordcount-java
-##### upload build/libs/spark-wordcount-java-1.0.jar
+##### upload build/libs/spark-wordcount-java-0.0.1-SNAPSHOT.jar
 
 ### run spark-submit
 ##### go to spark-cassandra-java/ in spark server
 cd spark-wordcount-java
 ##### run spark-submit
-spark-submit --class dannyk.project.JavaDemo --jars build/libs/spark-wordcount-java-1.0.jar \
---master {master} spark-wordcount-java-1.0.jar {spark master} {input file name}
+spark-submit --class dannyk.project.WordCount --jars build/libs/spark-wordcount-java-0.0.1-SNAPSHOT.jar \
+--master {master} spark-wordcount-java-0.0.1-SNAPSHOT.jar {spark master} {input file name}
 
 
-spark-submit --class dannyk.project.WordCount --jars build/libs/spark-wordcount-java-1.0.jar \
---master local[4] spark-wordcount-java-1.0.jar local build.gradle
+spark-submit --class dannyk.project.WordCount --jars build/libs/spark-wordcount-java-0.0.1-SNAPSHOT.jar \
+--master local[4] spark-wordcount-java-0.0.1-SNAPSHOT.jar local build.gradle
